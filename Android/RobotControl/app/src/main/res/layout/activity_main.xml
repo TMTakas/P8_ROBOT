@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.mondi.robotcontrol.MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Speed :"
+                app:layout_constraintStart_toStartOf="@+id/linearLayout"
+                app:layout_constraintTop_toTopOf="@+id/SeekBarMove" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Time :"
+                app:layout_constraintStart_toStartOf="@+id/linearLayout"
+                app:layout_constraintTop_toTopOf="@+id/EditTextTime" />
+
+            <Button
+                android:id="@+id/ButtonSendCommand"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Send"
+                app:layout_constraintEnd_toEndOf="@+id/EditTextCommand"
+                app:layout_constraintStart_toStartOf="@+id/EditTextCommand"
+                app:layout_constraintTop_toBottomOf="@+id/EditTextCommand" />
+
+            <Button
+                android:id="@+id/ButtonClearCommands"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="CLEAR COMMANDS"
+                app:layout_constraintEnd_toEndOf="@+id/ButtonSendCommand"
+                app:layout_constraintStart_toStartOf="@+id/ButtonSendCommand"
+                app:layout_constraintTop_toBottomOf="@+id/ButtonSendCommand" />
+
+            <Button
+                android:id="@+id/ButtonGoCharts"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="GO TO CHARTS"
+                app:layout_constraintEnd_toEndOf="@+id/ButtonClearCommands"
+                app:layout_constraintStart_toStartOf="@+id/ButtonClearCommands"
+                app:layout_constraintTop_toBottomOf="@+id/ButtonClearCommands" />
+
+            <EditText
+                android:id="@+id/EditTextTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="1000"
+                app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+                app:layout_constraintStart_toStartOf="@+id/SeekBarMove"
+                app:layout_constraintTop_toBottomOf="@+id/SeekBarMove" />
+
+            <SeekBar
+                android:id="@+id/SeekBarMove"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:max="100"
+                android:min="70"
+                app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+                app:layout_constraintStart_toEndOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/Button00"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/forward_and_left_arrow_sign"
+                        android:onClick="ButtonClick"
+                        android:tag="LF" />
+
+                    <Button
+                        android:id="@+id/Button01"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/up_arrow_sign"
+                        android:onClick="ButtonClick"
+                        android:tag="F" />
+
+                    <Button
+                        android:id="@+id/Button02"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/forward_and_right_arrow_sign"
+                        android:onClick="ButtonClick"
+                        android:tag="RF" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/Button10"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_weight="0"
+                        android:background="@drawable/left_arrow_sign"
+                        android:onClick="ButtonClick"
+                        android:tag="L" />
+
+
+                    <TextView
+                        android:id="@+id/TextViewCount"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:text="0"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="30sp" />
+
+                    <Button
+                        android:id="@+id/Button12"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_weight="0"
+                        android:background="@drawable/right_arrow_sign"
+                        android:onClick="ButtonClick"
+                        android:tag="R" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/Button20"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/left_and_down_arrow_sign"
+                        android:onClick="ButtonClick"
+                        android:tag="LB" />
+
+                    <Button
+                        android:id="@+id/Button21"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/down_arrow_sign"
+                        android:onClick="ButtonClick"
+                        android:tag="B" />
+
+                    <Button
+                        android:id="@+id/Button22"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/right_and_down_arrow_sign"
+                        android:onClick="ButtonClick"
+                        android:tag="RB" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/EditTextCommand"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="@+id/EditTextTime"
+                app:layout_constraintStart_toStartOf="@+id/linearLayout"
+                app:layout_constraintTop_toBottomOf="@+id/EditTextTime" />
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
